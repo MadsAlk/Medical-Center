@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.HistoryController">
+   <children>
+      <TableView fx:id="TV_history" layoutX="60.0" layoutY="219.0" prefHeight="403.0" prefWidth="732.0">
+        <columns>
+          <TableColumn fx:id="TC_ID" prefWidth="68.80000686645508" text="App ID" />
+          <TableColumn fx:id="TC_first" prefWidth="139.1999969482422" text="First name" />
+            <TableColumn fx:id="TC_last" prefWidth="137.06655883789062" text="Last name" />
+            <TableColumn fx:id="TC_gender" prefWidth="59.7333984375" text="Gender" />
+            <TableColumn fx:id="TC_age" prefWidth="59.733306884765625" text="Age" />
+            <TableColumn fx:id="TC_date" prefWidth="127.199951171875" text="Date" />
+            <TableColumn fx:id="TC_dep" prefWidth="141.5999755859375" text="Department" />
+        </columns>
+      </TableView>
+      <TextField fx:id="TA_search" layoutX="354.0" layoutY="162.0" prefHeight="33.0" prefWidth="340.0" />
+      <Label layoutX="234.0" layoutY="168.0" text="Search box">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="DP_from" layoutX="876.0" layoutY="225.0" promptText="From" />
+      <DatePicker fx:id="DP_to" layoutX="876.0" layoutY="280.0" promptText="To" />
+      <Label layoutX="831.0" layoutY="229.0" text="Date">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="833.0" layoutY="405.0" text="Age">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="RB_male" layoutX="908.0" layoutY="555.0" mnemonicParsing="false" text="Male">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="RB_female" layoutX="1017.0" layoutY="556.0" mnemonicParsing="false" text="Female" toggleGroup="$gender">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <JFXButton fx:id="btn_gender" layoutX="881.0" layoutY="592.0" onAction="#filterGender" prefWidth="80.0" style="-fx-background-color: #f3b05a;" text="Filter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_age" layoutX="884.0" layoutY="492.0" onAction="#filterAge" prefWidth="80.0" style="-fx-background-color: #f3b05a;" text="Filter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_date" layoutX="886.0" layoutY="324.0" onAction="#filterDate" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: #f3b05a;" text="Filter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="826.0" layoutY="555.0" text="Gender">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="882.0" layoutY="406.0" text="From">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="890.0" layoutY="448.0" text="To">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="CB_from" layoutX="937.0" layoutY="402.0" prefHeight="26.0" prefWidth="100.0" />
+      <ComboBox fx:id="CB_to" layoutX="937.0" layoutY="445.0" prefHeight="26.0" prefWidth="100.0" />
+      <Pane prefHeight="111.0" prefWidth="1200.0" style="-fx-background-color: #5c4a72;">
+         <children>
+            <ImageView fitHeight="172.0" fitWidth="185.0" layoutX="-3.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../../../../DataBase/img/sayrafi.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="1165.0" prefHeight="700.0" prefWidth="34.0" style="-fx-background-color: #5c4a72;" />
+      <JFXButton fx:id="btn_return" layoutX="1050.0" layoutY="651.0" onAction="#Return" prefWidth="80.0" style="-fx-background-color: #f3b05a;" text="Return">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_reset" layoutX="388.0" layoutY="635.0" onAction="#Reset" prefWidth="80.0" style="-fx-background-color: #f3b05a;" text="Reset">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

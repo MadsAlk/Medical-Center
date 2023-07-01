@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TreatController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <TableView fx:id="TV_Procedures" layoutX="86.0" layoutY="116.0" prefHeight="271.0" prefWidth="312.0" stylesheets="@application.css">
+        <columns>
+          <TableColumn fx:id="TC_PName" prefWidth="223.20001220703125" text="Procedure name" />
+          <TableColumn fx:id="TC_PPrice" prefWidth="86.4000244140625" text="Price" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="B_save" layoutX="1030.0" layoutY="628.0" onAction="#Save" prefHeight="37.0" prefWidth="84.0" style="-fx-background-color: #44a4f4;" text="Save" />
+      <JFXButton fx:id="B_remove" layoutX="88.0" layoutY="449.0" onAction="#removeProcedure" prefHeight="60.0" prefWidth="84.0" style="-fx-wrap-text: true; -fx-background-color: #44a4f4;" text="Remove procedure" textAlignment="CENTER" />
+      <ComboBox fx:id="CB_procedures" layoutX="472.0" layoutY="116.0" onAction="#chooseProcedure" prefWidth="150.0" />
+      <TextField fx:id="TF_price" layoutX="316.0" layoutY="387.0" prefHeight="26.0" prefWidth="84.0" />
+      <Label layoutX="186.0" layoutY="392.0" prefHeight="18.0" prefWidth="111.0" text="Total price:" />
+   </children>
+</AnchorPane>

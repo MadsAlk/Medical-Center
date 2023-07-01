@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #e9e9e9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.ProcController">
+   <children>
+      <TableView fx:id="TV_proc" layoutX="80.0" layoutY="124.0" prefHeight="339.0" prefWidth="615.0">
+        <columns>
+          <TableColumn fx:id="TC_ID" prefWidth="62.933349609375" text="ID" />
+          <TableColumn fx:id="TC_name" prefWidth="216.2666778564453" text="Name" />
+            <TableColumn fx:id="TC_price3" prefWidth="103.46664428710938" text="Price" />
+            <TableColumn fx:id="TC_tamkeen" prefWidth="144.53335571289062" text="tamkeen discount" />
+            <TableColumn fx:id="TC_dep" prefWidth="88.26654052734375" text="department" />
+        </columns>
+      </TableView>
+      <GridPane fx:id="grid_dep" gridLinesVisible="true" layoutX="850.0" layoutY="124.0" prefHeight="263.0" prefWidth="278.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="102.13330078125" minWidth="10.0" prefWidth="41.600012207031256" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="212.79998779296875" minWidth="10.0" prefWidth="212.79998779296875" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font name="Book Antiqua" size="16.0" />
+               </font>
+            </Label>
+            <Label text="Department" GridPane.columnIndex="1">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <TextField fx:id="TF_name" layoutX="164.0" layoutY="477.0" prefHeight="26.0" prefWidth="199.0" promptText="Procedure name" />
+      <TextField fx:id="TF_depID" layoutX="612.0" layoutY="477.0" prefHeight="26.0" prefWidth="83.0" promptText="Department ID" />
+      <TextField fx:id="TF_tamkeen" layoutX="471.0" layoutY="478.0" prefHeight="26.0" prefWidth="129.0" promptText="Tamkeen discount" />
+      <TextField fx:id="TF_price" layoutX="376.0" layoutY="477.0" prefHeight="26.0" prefWidth="83.0" promptText="Price" />
+      <JFXButton fx:id="btn_add" layoutX="81.0" layoutY="477.0" onAction="#addProc" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #f3b05a;" text="Add">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_refresh" layoutX="331.0" layoutY="554.0" onAction="#refresh" prefHeight="31.0" prefWidth="105.0" style="-fx-background-color: #f3b05a;" text="Refresh">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="TF_showDep" layoutX="955.0" layoutY="465.0" prefHeight="26.0" prefWidth="97.0" promptText="Department ID" />
+      <JFXButton fx:id="btn_delete" layoutX="75.0" layoutY="544.0" onAction="#Delete" prefHeight="52.0" prefWidth="79.0" style="-fx-background-color: #f3b05a; -fx-wrap-text: true;" text="Delete sellected" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <ButtonBar layoutX="843.0" layoutY="457.0" prefHeight="40.0" prefWidth="79.0">
+         <buttons>
+            <JFXButton fx:id="btn_show" onAction="#Show" style="-fx-background-color: #f3b05a;" text="Show" />
+         </buttons>
+      </ButtonBar>
+      <JFXButton fx:id="btn_sort" layoutX="855.0" layoutY="564.0" onAction="#Sort" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #f3b05a;" text="Sort" />
+      <Label layoutX="855.0" layoutY="437.0" text="Show only procedures from this department:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="860.0" layoutY="540.0" text="Sort by:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="RB_name" layoutX="950.0" layoutY="570.0" mnemonicParsing="false" text="Name">
+         <toggleGroup>
+            <ToggleGroup fx:id="sort" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="RB_price" layoutX="950.0" layoutY="600.0" mnemonicParsing="false" text="Price" toggleGroup="$sort" />
+      <RadioButton fx:id="RB_discount" layoutX="950.0" layoutY="630.0" mnemonicParsing="false" text="Discount" toggleGroup="$sort" />
+      <JFXButton fx:id="btn_return" layoutX="1103.0" layoutY="652.0" onAction="#Return" prefHeight="23.0" prefWidth="73.0" style="-fx-background-color: #f3b05a;" text="Return" />
+   </children>
+</AnchorPane>
